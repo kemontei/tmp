@@ -18,9 +18,11 @@ async function main() {
     let contractaddress = "0xFF9C1b15B16263C61d017ee9F65C50e4AE0113D7";
     let contract = new ethers.Contract(contractaddress, abi, wallet);
 
-    // calling the "retrieve" function to read the stored value
-    let read = await contract.getWeapon(1);
-    console.log("Value stored in contract is " + read.toString());
+    // calling the "retrieve" function to read the values
+    for (let i = 1; i < 20; i++) {
+        let read = await contract.getWeapon(i);
+        console.log(">>" + read.toString());
+    }
 }
 
 main();
