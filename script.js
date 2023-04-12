@@ -19,7 +19,7 @@ async function main() {
     let contract = new ethers.Contract(contractaddress, abi, wallet);
 
     // calling the "retrieve" function to read the stored value
-    let read = await contract.getWeapon();
+    let read = await contract.getWeapon(1);
     console.log("Value stored in contract is " + read.toString());
 }
 
