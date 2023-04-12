@@ -19,7 +19,7 @@ async function main() {
     let contract = new ethers.Contract(contractaddress, abi, wallet);
 
     // calling the "retrieve" function to read the values
-    for (let i = 1; i < 20; i++) {
+    for (let i = 1; i < process.argv[2]; i++) {
         let read = await contract.getWeapon(i);
         console.log(">>" + read.toString());
     }
